@@ -1,0 +1,54 @@
+﻿
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form action="~/Employee/Create" method="post">
+
+    <table>
+
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="Name" name="Name" /></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td><input type="text" id="Salary" name="Salary" /></td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td><input type="text" id="Email" name="Email" /></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td><input type="text" id="Password" name="Password" /></td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td><input type="text" id="Confirm_pwd" name="Confirm_pwd" /></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="text" id="Age" name="Age" /></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" id="Address" name="Address" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"> <input type="submit" value="Submit" /></td>
+
+        </tr>
+        <tr>
+            <td><label>@ViewBag.Rowsinserted </label> </td>
+        </tr>
+    </table>
+
+    
+    
+
+</form>

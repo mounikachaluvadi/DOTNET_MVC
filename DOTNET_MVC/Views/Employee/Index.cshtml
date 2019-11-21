@@ -1,0 +1,41 @@
+﻿@model List<DOTNET_MVC.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>Salary</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Age</th>
+        <th>Address</th>
+    </tr>
+    
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>@item.Salary</td>
+        <td>@item.Email</td>
+        <td>@item.Password</td>
+        <td>@item.Age</td>
+        <td>@item.Address</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { Id = @item.Id })
+            @Html.ActionLink("Delete", "Delete", new { Id = @item.Id })
+
+        </td>
+        
+
+    </tr>
+    }
+
+
+
+</table>
