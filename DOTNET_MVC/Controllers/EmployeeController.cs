@@ -47,6 +47,45 @@ namespace DOTNET_MVC.Controllers
             
         }
 
+        [HttpGet]
+        public ActionResult Edit(int Id)
+        {
+            Employee obj = db.GetEmployeeDetailsById(Id);
+            return View(obj);
+        }
+        [HttpPost]
+        public ActionResult Edit(Employee emp)
+        {
+            int i = db.UpdateEmployee(emp);
+            if (i == 1)
+            {
+                ViewBag.Rowsinserted = "Data entered successfully";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.Rowsinserted = "Data failed to insert";
+                return View();
+            }
 
+            
+        }
+        
+        //[HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            int i=db.DeleteEmployee(Id);
+            if (i == 1)
+            {
+                ViewBag.RowDeleted = "Row Deleted successfully";
+               //return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.RowDeleted = "Failed";
+                //return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
